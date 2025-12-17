@@ -2,6 +2,7 @@ import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 
 import { siteConfig } from "@/config/site";
+import HeroSearch from "@/components/hero-search";
 
 const services = [
   {
@@ -215,6 +216,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <HeroSearch />
 
       <section id="why" className="ds-section grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="flex flex-col gap-6">
