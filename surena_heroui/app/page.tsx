@@ -3,6 +3,7 @@ import { Link } from "@heroui/link";
 
 import { siteConfig } from "@/config/site";
 import HeroSearch from "@/components/hero-search";
+import CategoryExplore from "@/components/category-explore";
 
 const services = [
   {
@@ -135,17 +136,25 @@ export default function Home() {
           <div className="absolute right-8 top-0 h-72 w-72 ds-glow-indigo" />
         </div>
         <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="flex flex-col gap-6 animate-rise">
-            <span className="ds-chip">Sorena Nexus — رشد آنلاین آسوده و قابل اعتماد</span>
+          <div className="flex flex-col gap-8 animate-rise">
+            <span className="ds-chip">
+              Sorena Nexus — رشد آنلاین آسوده و قابل اعتماد
+            </span>
             <h1 className="ds-display">
-              <span className="ds-gradient-text">سورنانت</span> اکوسیستم مطمئن
-              برای طراحی سایت، تجربه دیجیتال و محصولات اورجینال وردپرس
+              <span className="ds-gradient-text ds-gradient-animate">
+                سورنانت
+              </span>{" "}
+              اکوسیستم مطمئن برای طراحی سایت، تجربه دیجیتال و محصولات اورجینال
+              وردپرس
             </h1>
             <p className="ds-subtitle">
               سورنانت با تمرکز بر کیفیت واقعی، امنیت جدی و خلاقیت هدفمند ساخته
               شده تا رشد آنلاین را از شانس به فرآیند تبدیل کند. اینجا هر تصمیم
               بر پایه استانداردهای جهانی و نیاز واقعی بازار ایران است.
             </p>
+            <div className="mt-10 flex w-full justify-center">
+              <HeroSearch />
+            </div>
             <div className="flex flex-wrap gap-3">
               <Button
                 as={Link}
@@ -183,7 +192,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="ds-card-soft p-6 animate-rise animate-rise-delay-1">
+          <div className="ds-card-soft p-8 shadow-2xl border border-slate-800/70 lg:p-10 lg:scale-[1.02] animate-rise animate-rise-delay-1">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-slate-400">نمای کلی خدمات</p>
@@ -208,7 +217,9 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-6 ds-card-muted p-5">
-              <p className="text-sm font-semibold text-white">اصل ساده سورنانت</p>
+              <p className="text-sm font-semibold text-white">
+                اصل ساده سورنانت
+              </p>
               <p className="mt-1 text-xs text-slate-400">
                 رشد آنلاین باید آسوده، شفاف و قابل اعتماد باشد.
               </p>
@@ -217,9 +228,10 @@ export default function Home() {
         </div>
       </section>
 
-      <HeroSearch />
-
-      <section id="why" className="ds-section grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+      <section
+        id="why"
+        className="ds-section grid gap-10 lg:grid-cols-[1.05fr_0.95fr]"
+      >
         <div className="flex flex-col gap-6">
           <div>
             <p className="ds-eyebrow">چرا سورنانت؟</p>
@@ -348,7 +360,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="values" className="ds-section grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+      <section
+        id="values"
+        className="ds-section grid gap-10 lg:grid-cols-[0.95fr_1.05fr]"
+      >
         <div className="ds-card p-7">
           <p className="ds-eyebrow">ارزش های سورنانت</p>
           <h2 className="ds-title mt-3">
@@ -442,6 +457,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <CategoryExplore />
 
       <section id="contact" className="ds-section ds-card px-7 py-12 text-center">
         <p className="ds-eyebrow">شروع همکاری</p>

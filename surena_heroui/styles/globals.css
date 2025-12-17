@@ -159,6 +159,11 @@
     color: transparent;
   }
 
+  .ds-gradient-animate {
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+  }
+
   .ds-btn {
     border-radius: 0.85rem;
     font-weight: 600;
@@ -271,6 +276,14 @@
   .ds-glow-indigo {
     background: rgba(99, 102, 241, 0.55);
     filter: blur(120px);
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }
 
