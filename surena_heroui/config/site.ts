@@ -1,63 +1,63 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "سورنانت",
+  name: "Sorena Net",
   description:
-    "برند تخصصی طراحی وب، توسعه تجربه های دیجیتال و محصولات اورجینال وردپرس با تمرکز بر کیفیت واقعی و امنیت.",
+    "اکوسیستم مطمئن برای طراحی سایت، تجربه دیجیتال و محصولات اورجینال وردپرس",
   navItems: [
     {
-      label: "خانه",
+      label: "صفحه اصلی",
       href: "/",
     },
     {
-      label: "محصولات وردپرس",
-      href: "/#products",
+      label: "محصولات",
+      href: "/products",
     },
     {
-      label: "طراحی سایت",
-      href: "/#design",
+      label: "خدمات ما",
+      href: "/services",
     },
     {
-      label: "سئو",
-      href: "/#seo",
+      label: "وبلاگ",
+      href: "/blog",
     },
     {
-      label: "چرا سورنانت",
-      href: "/#why",
+      label: "درباره ما",
+      href: "/about",
     },
     {
       label: "تماس",
-      href: "/#contact",
+      href: "/contact",
     },
   ],
   navMenuItems: [
     {
-      label: "محصولات وردپرس",
-      href: "/#products",
+      label: "صفحه اصلی",
+      href: "/",
     },
     {
-      label: "طراحی سایت",
-      href: "/#design",
+      label: "محصولات",
+      href: "/products",
     },
     {
-      label: "سئو تضمینی",
-      href: "/#seo",
+      label: "خدمات ما",
+      href: "/services",
     },
     {
-      label: "ارزش ها",
-      href: "/#values",
+      label: "وبلاگ",
+      href: "/blog",
     },
     {
-      label: "مخاطبان",
-      href: "/#audience",
+      label: "درباره ما",
+      href: "/about",
     },
     {
-      label: "تماس و مشاوره",
-      href: "/#contact",
+      label: "تماس",
+      href: "/contact",
     },
   ],
   links: {
-    primaryCta: "/#contact",
-    services: "/#services",
+    primaryCta: "/contact",
+    services: "/services",
   },
 };

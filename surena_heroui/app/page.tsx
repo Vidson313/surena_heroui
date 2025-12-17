@@ -8,9 +8,9 @@ import CategoryExplore from "@/components/category-explore";
 const services = [
   {
     id: "design",
-    title: "طراحی وب سایت اختصاصی",
+    title: "طراحی وب‌سایت اختصاصی",
     description:
-      "طراحی رابط کاربری مدرن و کدنویسی استاندارد مطابق با نیازهای برند شما. ما فقط سایت نمی سازیم، هویت خلق می کنیم.",
+      "طراحی رابط کاربری مدرن، معماری اصولی و سرعت بالا؛ سایتی که فقط زیبا نیست، بلکه فروش می‌سازد.",
     cta: "دریافت مشاوره",
     accent: "blue",
     icon: (
@@ -32,9 +32,9 @@ const services = [
   },
   {
     id: "seo",
-    title: "سئو و بهینه سازی",
+    title: "سئو و بهینه‌سازی",
     description:
-      "افزایش رتبه در گوگل با استراتژی های کلاه سفید. سرعت سایت شما را به موشک تبدیل می کنیم تا دیده شوید.",
+      "تحلیل رقبا، استراتژی مرحله‌به‌مرحله و اجرای کلاه سفید برای رشد پایدار ورودی و درآمد.",
     cta: "شروع رشد",
     accent: "indigo",
     featured: "پیشنهاد ویژه",
@@ -59,7 +59,7 @@ const services = [
     id: "support",
     title: "پشتیبانی و امنیت",
     description:
-      "خیالتان از بابت آپتایم و امنیت راحت باشد. تیم فنی سورنانت به صورت ۲۴ ساعته مراقب کسب و کار شماست.",
+      "مانیتورینگ، به‌روزرسانی و امنیت جدی تا خیالتان از آپتایم و سلامت سایت راحت باشد.",
     cta: "اطلاعات بیشتر",
     accent: "blue",
     icon: (
@@ -84,73 +84,81 @@ const services = [
 const values = [
   {
     title: "کیفیت واقعی",
-    description: "هر محصول و پروژه قبل از ارائه، تست امنیتی و عملکردی می شود.",
+    description:
+      "هر محصول و پروژه قبل از ارائه، تست فنی، امنیتی و عملکردی می‌شود.",
   },
   {
     title: "صداقت و شفافیت",
-    description: "قیمت ها و وعده ها روشن، قابل بررسی و بدون اغراق هستند.",
+    description:
+      "ادعاهای قابل بررسی، قیمت‌گذاری روشن و مسیر همکاری کاملاً مشخص.",
   },
   {
-    title: "پشتیبانی حرفه ای",
-    description: "متعهد به پاسخگویی سریع و حل مسئله در کوتاه ترین زمان هستیم.",
+    title: "پشتیبانی حرفه‌ای",
+    description:
+      "تعهد به پاسخ‌گویی سریع و حل مسئله بدون اتلاف زمان و هزینه.",
   },
   {
-    title: "نوآوری هدفمند",
-    description: "همگام با ترندهای جهانی، اما همیشه با تمرکز بر نتیجه.",
+    title: "نوآوری و آینده‌گرایی",
+    description:
+      "همگام با ترندهای طراحی و استانداردهای جهانی توسعه برای رشد پایدار.",
   },
   {
     title: "تجربه کاربر",
-    description: "هر سرویس با نگاه عمیق به حس اعتماد و مسیر مشتری طراحی می شود.",
+    description:
+      "طراحی مسیر اعتماد و خرید با تمرکز بر حس امنیت و رضایت مشتری.",
   },
 ];
 
 const steps = [
   {
-    title: "کشف و تحلیل",
-    description: "نیاز واقعی، رقبا و فرصت های رشد را دقیق بررسی می کنیم.",
+    title: "کشف و استراتژی",
+    description:
+      "شناخت دقیق نیاز، تحلیل رقبا و تعریف مسیر رشد براساس داده واقعی.",
   },
   {
     title: "طراحی و اجرا",
-    description: "ساخت تجربه ای که سریع، امن و آماده فروش باشد.",
+    description:
+      "طراحی UI/UX، توسعه استاندارد و تست امنیت برای تحویل مطمئن.",
   },
   {
-    title: "رشد پایدار",
-    description: "بهینه سازی مداوم برای تبدیل رشد به فرآیند قابل اعتماد.",
+    title: "بهینه‌سازی و رشد",
+    description:
+      "سئو مرحله‌ای، پایش عملکرد و پشتیبانی مستمر برای نتایج پایدار.",
   },
 ];
 
 const audiences = [
-  "کسب و کارهایی که وب سایت فروشگاهی یا شرکتی می خواهند.",
-  "کلینیک ها و کسب و کارهای فیزیکی که به حضور دیجیتال نیاز دارند.",
-  "طراحان وب مبتدی تا متوسط که محصول اصل و پشتیبانی می خواهند.",
-  "برندهایی که رشد سئویی واقعی و پایدار می خواهند.",
+  "کسب‌وکارهای فروشگاهی و شرکتی که سایت حرفه‌ای و امن می‌خواهند.",
+  "کلینیک‌ها و کسب‌وکارهای فیزیکی که دنبال حضور دیجیتال مؤثر هستند.",
+  "طراحان وب مبتدی تا متوسط که محصول اصل و پشتیبانی نیاز دارند.",
+  "برندهایی که رشد سئویی واقعی و نتیجه‌محور می‌خواهند.",
 ];
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-24 pb-24">
-      <section className="relative overflow-hidden rounded-[var(--ds-radius-lg)] border border-[color:var(--ds-border)] ds-hero p-8 md:p-12">
+      <section className="ds-hero relative overflow-hidden rounded-[var(--ds-radius-lg)] border border-[color:var(--ds-border)] p-8 md:p-12">
         <div className="pointer-events-none absolute inset-0 opacity-70">
-          <div className="absolute inset-0 ds-grid" />
-          <div className="absolute left-8 top-12 h-64 w-64 ds-glow-blue" />
-          <div className="absolute right-8 top-0 h-72 w-72 ds-glow-indigo" />
+          <div className="ds-grid absolute inset-0" />
+          <div className="ds-glow-blue absolute left-8 top-12 h-64 w-64" />
+          <div className="ds-glow-indigo absolute right-8 top-0 h-72 w-72" />
         </div>
         <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="flex flex-col gap-8 animate-rise">
             <span className="ds-chip">
-              Sorena Nexus — رشد آنلاین آسوده و قابل اعتماد
+              Sorena Nexus • مسیر شفاف رشد آنلاین
             </span>
             <h1 className="ds-display">
               <span className="ds-gradient-text ds-gradient-animate">
                 سورنانت
               </span>{" "}
-              اکوسیستم مطمئن برای طراحی سایت، تجربه دیجیتال و محصولات اورجینال
-              وردپرس
+              اکوسیستم مطمئن برای طراحی وب‌سایت، تجربه دیجیتال و محصولات
+              اورجینال وردپرس
             </h1>
             <p className="ds-subtitle">
-              سورنانت با تمرکز بر کیفیت واقعی، امنیت جدی و خلاقیت هدفمند ساخته
-              شده تا رشد آنلاین را از شانس به فرآیند تبدیل کند. اینجا هر تصمیم
-              بر پایه استانداردهای جهانی و نیاز واقعی بازار ایران است.
+              ما رشد آنلاین را از یک اتفاق به یک فرآیند تبدیل می‌کنیم؛ از انتخاب
+              محصول اورجینال تا طراحی سایت حرفه‌ای و سئو نتیجه‌محور. همه چیز باید
+              آسوده، شفاف و قابل اعتماد باشد.
             </p>
             <div className="mt-10 flex w-full justify-center">
               <HeroSearch />
@@ -179,9 +187,18 @@ export default function Home() {
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               {[
-                { title: "کیفیت واقعی", desc: "تست شده، امن، استاندارد" },
-                { title: "مسیر شفاف", desc: "مستند و قابل پیگیری" },
-                { title: "پشتیبانی سریع", desc: "متعهد و مسئول" },
+                {
+                  title: "کیفیت واقعی",
+                  desc: "تست فنی، امنیتی و عملکردی برای هر خروجی.",
+                },
+                {
+                  title: "محصول اورجینال",
+                  desc: "نسخه به‌روز، لایسنس معتبر و بومی‌سازی کامل.",
+                },
+                {
+                  title: "پشتیبانی حرفه‌ای",
+                  desc: "پاسخ‌گویی دقیق و سریع در تمام مراحل.",
+                },
               ].map((stat) => (
                 <div key={stat.title} className="ds-card-muted p-5">
                   <p className="text-sm font-semibold text-white">
@@ -192,36 +209,37 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="ds-card-soft p-8 shadow-2xl border border-slate-800/70 lg:p-10 lg:scale-[1.02] animate-rise animate-rise-delay-1">
+          <div className="animate-rise animate-rise-delay-1 border border-slate-800/70 p-8 shadow-2xl ds-card-soft lg:p-10 lg:scale-[1.02]">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-slate-400">نمای کلی خدمات</p>
+                <p className="text-sm text-slate-400">مسیر همکاری سورنانت</p>
                 <p className="text-lg font-semibold text-white">
-                  تجربه دیجیتال نتیجه محور
+                  از انتخاب محصول تا رشد پایدار همراه شما هستیم
                 </p>
               </div>
-              <span className="ds-chip">از انتخاب تا رشد</span>
+              <span className="ds-chip">پشتیبانی VIP</span>
             </div>
             <div className="mt-6 grid gap-4">
               {[
-                "محصولات اورجینال وردپرس",
-                "طراحی سایت حرفه ای",
-                "سئو تضمینی با مسیر شفاف",
+                "محصولات اورجینال وردپرس با تضمین امنیت",
+                "طراحی UX محور با استانداردهای جهانی",
+                "سئو مرحله‌ای با گزارش شفاف",
               ].map((item) => (
                 <div key={item} className="ds-card-muted p-5">
                   <p className="text-sm font-semibold text-white">{item}</p>
                   <p className="mt-1 text-xs text-slate-400">
-                    تیم سورنانت این مسیر را با جزئیات و امنیت کامل هدایت می کند.
+                    همه خروجی‌ها قبل از تحویل تست می‌شوند تا کیفیت واقعی تضمین
+                    شود.
                   </p>
                 </div>
               ))}
             </div>
             <div className="mt-6 ds-card-muted p-5">
               <p className="text-sm font-semibold text-white">
-                اصل ساده سورنانت
+                گارانتی بازگشت وجه
               </p>
               <p className="mt-1 text-xs text-slate-400">
-                رشد آنلاین باید آسوده، شفاف و قابل اعتماد باشد.
+                اگر نتیجه مطابق توافق نبود، بازگشت وجه بدون پیچیدگی انجام می‌شود.
               </p>
             </div>
           </div>
@@ -236,20 +254,19 @@ export default function Home() {
           <div>
             <p className="ds-eyebrow">چرا سورنانت؟</p>
             <h2 className="ds-title mt-3">
-              ایجاد شد تا رشد دیجیتال کسب و کارها ساده، امن و نتیجه محور باشد
+              برای اینکه رشد دیجیتال از «شانس» به «فرآیند» تبدیل شود
             </h2>
           </div>
           <p className="ds-subtitle">
-            سورنانت به وجود آمد تا کسب و کارهای ایرانی بدون درگیری با دغدغه های
-            فنی به ابزارهای استاندارد وردپرس دسترسی داشته باشند و همزمان از طراحی
-            سایت حرفه ای و سئو نتیجه محور بهره ببرند. هدف ما ساخت اکوسیستمی قابل
-            اعتماد است که مسیر رشد را روشن و قابل پیگیری کند.
+            سورنانت با تمرکز بر کیفیت واقعی، امنیت جدی و کیفیت قابل سنجش است، مسیر
+            رشد برندها را مرحله‌به‌مرحله طراحی می‌کند. هدف ما ساخت یک اکوسیستم
+            قابل اعتماد برای کسب‌وکارهای ایرانی است.
           </p>
           <div className="ds-card-muted p-6">
-            <p className="text-sm font-semibold text-white">ماموریت اصلی</p>
+            <p className="text-sm font-semibold text-white">اصل بنیادین</p>
             <p className="mt-2 text-sm text-slate-400">
-              تبدیل رشد آنلاین از شانس به فرآیند با ارائه محصول اورجینال، طراحی
-              هدفمند و سئوی شفاف.
+              رشد آنلاین باید آسوده، شفاف و قابل اعتماد باشد؛ بدون دغدغه‌های
+              فنی، بدون وعده‌فروشی و با نتایج قابل اندازه‌گیری.
             </p>
           </div>
         </div>
@@ -268,29 +285,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="services"
-        className="relative overflow-hidden bg-slate-950 py-24"
-      >
-        <div className="absolute left-1/2 top-0 h-full w-full max-w-3xl -translate-x-1/2 opacity-30 pointer-events-none">
+      <section id="services" className="relative overflow-hidden bg-slate-950 py-24">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-full w-full max-w-3xl -translate-x-1/2 opacity-30">
           <div className="absolute left-20 top-20 h-72 w-72 rounded-full bg-blue-600 blur-[120px] mix-blend-screen" />
           <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-indigo-600 blur-[120px] mix-blend-screen" />
         </div>
 
         <div className="ds-container relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
               هر سرویس برای ساخت{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
+              <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
                 اعتماد و فروش
               </span>
             </h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-              راهکارهای اختصاصی سورنانت برای رشد بیزنس شما در دنیای دیجیتال
+            <p className="mx-auto max-w-2xl text-lg text-slate-400">
+              راهکارهای اختصاصی سورنانت برای رشد کسب‌وکار شما در دنیای دیجیتال
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {services.map((service) => {
               const isIndigo = service.accent === "indigo";
 
@@ -309,24 +323,24 @@ export default function Home() {
                     </div>
                   ) : null}
                   <div
-                    className={`mb-6 flex h-14 w-14 items-center justify-center rounded-xl ${
+                    className={`mb-6 flex h-14 w-14 items-center justify-center rounded-xl transition-colors duration-300 ${
                       isIndigo
                         ? "bg-slate-700 group-hover:bg-indigo-600"
                         : "bg-slate-800 group-hover:bg-blue-600"
-                    } transition-colors duration-300`}
+                    }`}
                   >
                     <div
-                      className={`${
+                      className={`transition-colors duration-300 ${
                         isIndigo ? "text-indigo-400" : "text-blue-400"
-                      } group-hover:text-white transition-colors duration-300`}
+                      } group-hover:text-white`}
                     >
                       {service.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">
+                  <h3 className="mb-3 text-xl font-bold text-white">
                     {service.title}
                   </h3>
-                  <p className="text-slate-400 text-sm leading-7 mb-8">
+                  <p className="mb-8 text-sm leading-7 text-slate-400">
                     {service.description}
                   </p>
                   <Link
@@ -340,7 +354,7 @@ export default function Home() {
                     {service.cta}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 mr-1 transform transition-transform group-hover:-translate-x-1"
+                      className="mr-1 h-4 w-4 transform transition-transform group-hover:-translate-x-1"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -365,18 +379,20 @@ export default function Home() {
         className="ds-section grid gap-10 lg:grid-cols-[0.95fr_1.05fr]"
       >
         <div className="ds-card p-7">
-          <p className="ds-eyebrow">ارزش های سورنانت</p>
+          <p className="ds-eyebrow">ارزش‌های سورنانت</p>
           <h2 className="ds-title mt-3">
-            هر تصمیم با نگاه به کیفیت، اعتماد و تجربه کاربر گرفته می شود
+            ما فقط خدمات نمی‌فروشیم؛ تجربه مطمئن می‌سازیم
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-400">
-            سورنانت فقط خدمات نمی فروشد؛ تجربه مطمئن می سازد. این ارزش ها ستون
-            فکری تمام محصولات و پروژه های ما هستند.
+            کیفیت واقعی، شفافیت و پشتیبانی حرفه‌ای ستون‌های اصلی سورنانت هستند.
+            هر تصمیم طراحی و توسعه باید به اعتماد کاربر اضافه کند و مسیر خرید را
+            آسان‌تر سازد.
           </p>
           <div className="mt-6 ds-card-muted p-5">
-            <p className="text-sm font-semibold text-white">گارانتی واقعی</p>
+            <p className="text-sm font-semibold text-white">تعهد عملی</p>
             <p className="mt-2 text-xs text-slate-400">
-              ضمانت بازگشت وجه، بخشی از تعهد ما به کیفیت است.
+              تمام محصولات و پروژه‌ها قبل از انتشار تست می‌شوند و گزارش کیفیت
+              ارائه می‌شود.
             </p>
           </div>
         </div>
@@ -384,7 +400,9 @@ export default function Home() {
           {values.map((value) => (
             <div key={value.title} className="ds-card p-6">
               <p className="text-base font-semibold text-white">{value.title}</p>
-              <p className="mt-2 text-sm text-slate-400">{value.description}</p>
+              <p className="mt-2 text-sm text-slate-400">
+                {value.description}
+              </p>
             </div>
           ))}
         </div>
@@ -392,21 +410,22 @@ export default function Home() {
 
       <section className="ds-section grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="ds-card-muted p-7">
-          <p className="ds-eyebrow">تفاوت سورنانت</p>
+          <p className="ds-eyebrow">چشم‌انداز سورنانت</p>
           <h2 className="ds-title mt-3">
-            ترکیب کمیاب محصول اورجینال، پشتیبانی واقعی و تیم متخصص
+            تبدیل شدن به معتبرترین برند فنی وب در ایران
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-400">
-            سورنانت فقط خدمات نمی دهد؛ مسیر مطمئن می سازد. از لحظه انتخاب تا خرید
-            و پشتیبانی، همه چیز بر اساس اعتماد و کیفیت واقعی طراحی شده است.
+            سورنانت در مسیر ساخت یک Marketplace قانونی و بزرگ برای محصولات
+            وردپرس، مرجع آموزش‌های تخصصی طراحی وب و سئو و انتخاب اول برندها برای
+            رشد دیجیتال حرکت می‌کند.
           </p>
         </div>
         <div className="grid gap-4">
           {[
-            "محصولات قانونی و به روز بدون کد مخرب",
-            "پشتیبانی پاسخگو با زمان بندی مشخص",
-            "گارانتی بازگشت وجه و تعهد کتبی",
-            "تیم توسعه متخصص برای پروژه های پیچیده",
+            "Marketplace اورجینال با لایسنس معتبر و پشتیبانی واقعی",
+            "مرجع آموزش‌های تخصصی طراحی وب و سئو",
+            "فرآیند همکاری شفاف با گارانتی بازگشت وجه",
+            "تیم توسعه متخصص برای پروژه‌های High-End",
           ].map((item) => (
             <div key={item} className="ds-card p-5">
               <p className="text-sm font-semibold text-[color:var(--ds-ink-soft)]">
@@ -419,9 +438,9 @@ export default function Home() {
 
       <section id="audience" className="ds-section flex flex-col gap-8">
         <div>
-          <p className="ds-eyebrow">برای چه کسانی؟</p>
+          <p className="ds-eyebrow">مناسب برای چه کسانی؟</p>
           <h2 className="ds-title mt-3">
-            سورنانت برای کسب و کارهایی است که رشد واقعی می خواهند
+            سورنانت برای برندهایی ساخته شده که رشد واقعی می‌خواهند
           </h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
@@ -437,22 +456,25 @@ export default function Home() {
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold text-amber-200">
-              چشم انداز سورنانت
+              آینده‌ای روشن برای رشد دیجیتال
             </p>
             <h2 className="mt-3 text-2xl font-bold md:text-4xl">
-              مسیر تبدیل شدن به معتبرترین برند فنی وب در ایران
+              با سورنانت، مسیر رشد آنلاین شما شفاف، قابل اعتماد و قابل اندازه‌گیری
+              می‌شود
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-200">
-              ساخت Marketplace قانونی محصولات وردپرس، ایجاد مرجع آموزش تخصصی
-              طراحی وب و سئو، و تبدیل شدن به انتخاب اول برندها برای رشد دیجیتال.
+              ترکیب محصول اورجینال، پشتیبانی واقعی، گارانتی بازگشت وجه و تیم توسعه
+              متخصص، تجربه‌ای می‌سازد که از انتخاب تا خرید و پشتیبانی در کنار شماست.
             </p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <p className="text-sm font-semibold text-white">مسیر آینده</p>
+            <p className="text-sm font-semibold text-white">
+              مزیت‌های رقابتی
+            </p>
             <ul className="mt-3 space-y-2 text-sm text-slate-200">
-              <li>گسترش محصولات اورجینال و استاندارد</li>
-              <li>افزایش عمق آموزش و توانمندسازی تیم ها</li>
-              <li>ایجاد تجربه خرید و پشتیبانی بی نقص</li>
+              <li>محصولات تست‌شده بدون کد مخرب و با آپدیت منظم</li>
+              <li>پشتیبانی سریع و دقیق با تیم متخصص</li>
+              <li>گارانتی بازگشت وجه برای پروژه‌های طراحی و سئو</li>
             </ul>
           </div>
         </div>
@@ -463,11 +485,11 @@ export default function Home() {
       <section id="contact" className="ds-section ds-card px-7 py-12 text-center">
         <p className="ds-eyebrow">شروع همکاری</p>
         <h2 className="ds-title mt-3">
-          آماده ایم تا مسیر رشد دیجیتال شما را طراحی کنیم
+          آماده‌ایم تا مسیر رشد دیجیتال شما را با امنیت و شفافیت بسازیم
         </h2>
         <p className="mt-4 text-sm leading-7 text-slate-400">
-          اگر به دنبال وب سایتی هستید که واقعا کار کند، یا محصول اورجینال و
-          پشتیبانی واقعی می خواهید، همین امروز با ما وارد گفتگو شوید.
+          همین حالا مشاوره تخصصی بگیرید و مسیر مناسب کسب‌وکار خود را انتخاب کنید.
+          تیم سورنانت کنار شماست تا بدون دغدغه‌های فنی، بهترین نتیجه را بگیرید.
         </p>
         <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
           <Button
@@ -478,7 +500,7 @@ export default function Home() {
             size="lg"
             variant="flat"
           >
-            درخواست مشاوره
+            دریافت مشاوره
           </Button>
           <Button
             as={Link}
@@ -488,7 +510,7 @@ export default function Home() {
             size="lg"
             variant="flat"
           >
-            دریافت معرفی خدمات
+            مشاهده خدمات
           </Button>
         </div>
       </section>

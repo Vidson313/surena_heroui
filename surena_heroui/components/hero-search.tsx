@@ -1,14 +1,15 @@
 import { Search } from "lucide-react";
 import NextLink from "next/link";
 
-const hotTags = ["قالب پرو", "المنتور", "سئو"];
+const hotTags = ["قالب فروشگاهی", "المنتور پرو", "سئو وردپرس", "امنیت"];
 
 export default function HeroSearch() {
   return (
     <div className="group relative w-full max-w-2xl">
       <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 blur opacity-20 transition duration-500 group-focus-within:opacity-50" />
       <form
-        action="/docs"
+        action="/products"
+        method="get"
         className="relative flex items-center rounded-2xl border border-slate-800 bg-slate-900/80 p-1.5 shadow-2xl backdrop-blur-xl"
         role="search"
       >
@@ -17,13 +18,13 @@ export default function HeroSearch() {
         </div>
         <input
           type="text"
-          name="q"
-          placeholder="جستجوی هوشمند در محصولات..."
-          aria-label="جستجو در محصولات سورنانت"
+          name="search"
+          placeholder="جستجوی هوشمند بین محصولات سورنانت..."
+          aria-label="جستجوی محصولات سورنانت"
           className="w-full bg-transparent px-3 py-3 text-base text-white placeholder:text-slate-600 focus:outline-none"
         />
         <button className="rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 text-sm font-bold text-white transition-all hover:shadow-lg hover:shadow-blue-500/30">
-          بگرد
+          جستجو
         </button>
       </form>
 
@@ -32,7 +33,7 @@ export default function HeroSearch() {
           <NextLink
             key={tag}
             className="cursor-pointer text-slate-500 transition-colors hover:text-blue-400"
-            href={`/docs?q=${encodeURIComponent(tag)}`}
+            href={`/products?search=${encodeURIComponent(tag)}`}
           >
             #{tag}
           </NextLink>

@@ -37,16 +37,14 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-[color:var(--ds-bg)] text-white font-sans antialiased",
+          "min-h-screen bg-[color:var(--ds-bg)] font-sans text-white antialiased",
           fontSans.variable,
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col min-h-screen">
+          <div className="relative flex min-h-screen flex-col">
             <Navbar />
-            <main className="ds-container flex-grow pt-20">
-              {children}
-            </main>
+            <main className="ds-container flex-grow pt-20">{children}</main>
             <footer className="w-full border-t border-[color:var(--ds-border)]">
               <div className="ds-container flex flex-col gap-4 py-6 md:flex-row md:items-center md:justify-between">
                 <div>
@@ -54,7 +52,8 @@ export default function RootLayout({
                     سورنانت
                   </p>
                   <p className="text-sm text-[color:var(--ds-muted)]">
-                    رشد آنلاین آسوده، شفاف و قابل اعتماد.
+                    اکوسیستم مطمئن برای طراحی سایت، تجربه دیجیتال و محصولات
+                    اورجینال وردپرس.
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-4 text-sm text-[color:var(--ds-muted)]">

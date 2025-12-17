@@ -35,14 +35,16 @@ export const Navbar = () => {
               <Logo />
             </span>
             <div className="flex flex-col leading-tight">
-              <span className="font-semibold text-base text-white">سورنانت</span>
+              <span className="text-base font-semibold text-white">
+                سورنانت
+              </span>
               <span className="text-xs text-[color:var(--ds-muted)]">
-                رشد آنلاین آسوده و قابل اعتماد
+                رشد آنلاین شفاف، امن و قابل اعتماد
               </span>
             </div>
           </NextLink>
         </NavbarBrand>
-        <ul className="hidden lg:flex gap-6 items-center">
+        <ul className="hidden lg:flex items-center gap-6">
           {siteConfig.navItems.map((item) => {
             const isActive =
               item.href === "/"
@@ -80,12 +82,12 @@ export const Navbar = () => {
             radius="lg"
             variant="flat"
           >
-            شروع مشاوره
+            شروع همکاری
           </Button>
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pr-4" justify="end">
+      <NavbarContent className="basis-1 pr-4 sm:hidden" justify="end">
         <NavbarMenuToggle />
       </NavbarContent>
 
@@ -106,7 +108,7 @@ export const Navbar = () => {
               radius="lg"
               variant="flat"
             >
-              شروع مشاوره
+              شروع همکاری
             </Button>
           </NavbarMenuItem>
         </div>

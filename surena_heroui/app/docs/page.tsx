@@ -5,57 +5,67 @@ import { siteConfig } from "@/config/site";
 
 const categories = [
   {
-    title: "افزونه های فروشگاهی",
-    description: "راهکارهای پرداخت، ارسال، کیف پول و شخصی سازی خرید.",
+    title: "قالب‌های اورجینال وردپرس",
+    description:
+      "پوسته‌های معتبر با آپدیت منظم، نصب آسان و سازگاری کامل با نیاز بازار ایران.",
   },
   {
-    title: "افزونه های بهینه سازی",
-    description: "سرعت، امنیت و عملکرد پایدار با استانداردهای جهانی.",
+    title: "افزونه‌های کاربردی و امن",
+    description:
+      "افزونه‌های تست‌شده برای سرعت، امنیت، فروش و بهینه‌سازی تجربه کاربر.",
   },
   {
-    title: "قالب های شرکتی",
-    description: "طراحی مدرن برای برندهایی که اعتمادسازی اولویت آنهاست.",
+    title: "لایسنس‌های قانونی و معتبر",
+    description:
+      "دسترسی قانونی به نسخه‌های اصلی با فعال‌سازی مطمئن و بدون ریسک امنیتی.",
   },
   {
-    title: "قالب های خدماتی",
-    description: "کلینیک، آموزشی و خدماتی با مسیر رزرو یا تماس شفاف.",
+    title: "سرویس‌های نگهداری و پشتیبانی",
+    description:
+      "به‌روزرسانی، بکاپ و مانیتورینگ برای حفظ سلامت و پایداری وب‌سایت.",
   },
 ];
 
 const guarantees = [
-  "نسخه اورجینال و قانونی بدون کد مخرب",
-  "بومی سازی کامل برای نیاز بازار ایران",
-  "تست امنیتی و عملکردی پیش از انتشار",
-  "پشتیبانی سریع و دقیق پس از خرید",
+  "لایسنس معتبر، به‌روز و بدون کد مخرب",
+  "تست امنیتی و عملکردی قبل از انتشار هر محصول",
+  "پشتیبانی سریع و دقیق در کوتاه‌ترین زمان",
+  "گارانتی بازگشت وجه در صورت عدم رضایت",
 ];
 
 export default function DocsPage() {
   return (
     <>
       <section className="ds-card-glow p-8">
-        <span className="ds-chip">محصولات وردپرس سورنانت</span>
+        <span className="ds-chip">مرکز محصولات سورنانت</span>
         <h1 className="ds-title mt-4">
-          فروش محصولات اورجینال با ضمانت کیفیت و پشتیبانی واقعی
+          محصولات اورجینال وردپرس با استاندارد جهانی و بومی‌سازی دقیق
         </h1>
         <p className="ds-subtitle mt-4">
-          سورنانت فقط محصولات قانونی و تست شده ارائه می دهد. ما نسخه های اصلی را
-          با بومی سازی کامل، راهنمای فارسی و پشتیبانی دقیق همراه می کنیم تا
-          خیالتان از امنیت و عملکرد راحت باشد.
+          سورنانت نسخه‌های واقعی، به‌روز و تست‌شده ارائه می‌دهد؛ بدون کد مخرب،
+          بدون باگ‌های رایج و با پشتیبانی حرفه‌ای. هدف ما ایجاد یک مرجع قابل اعتماد
+          برای دسترسی سریع و امن به محصولات وردپرس است.
         </p>
       </section>
 
       <section className="grid gap-4 md:grid-cols-2">
         {categories.map((category) => (
           <div key={category.title} className="ds-card p-6">
-            <p className="text-base font-semibold text-white">{category.title}</p>
-            <p className="mt-2 text-sm text-slate-400">{category.description}</p>
+            <p className="text-base font-semibold text-white">
+              {category.title}
+            </p>
+            <p className="mt-2 text-sm text-slate-400">
+              {category.description}
+            </p>
           </div>
         ))}
       </section>
 
       <section className="ds-card-muted p-7">
-        <p className="ds-eyebrow">تعهد سورنانت</p>
-        <h2 className="ds-title mt-3">چرا محصولات سورنانت قابل اعتماد است؟</h2>
+        <p className="ds-eyebrow">تضمین‌های سورنانت</p>
+        <h2 className="ds-title mt-3">
+          خرید مطمئن یعنی شفافیت، امنیت و پشتیبانی واقعی
+        </h2>
         <ul className="mt-6 grid gap-3 md:grid-cols-2">
           {guarantees.map((item) => (
             <li key={item} className="ds-card p-5">
@@ -67,12 +77,14 @@ export default function DocsPage() {
 
       <section className="ds-card p-7">
         <p className="ds-eyebrow">فرآیند خرید</p>
-        <h2 className="ds-title mt-3">مسیر شفاف از انتخاب تا استفاده</h2>
+        <h2 className="ds-title mt-3">
+          مسیر خرید ساده و سریع برای شروع پروژه شما
+        </h2>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {[
-            "بررسی نیاز و انتخاب محصول مناسب",
-            "دریافت فایل اورجینال و راهنمای فارسی",
-            "پشتیبانی سریع تا اجرای کامل",
+            "انتخاب محصول براساس نیاز واقعی و توضیحات شفاف.",
+            "ثبت سفارش و دریافت لایسنس معتبر در کمترین زمان.",
+            "پشتیبانی تخصصی برای نصب، راه‌اندازی و به‌روزرسانی.",
           ].map((step) => (
             <div key={step} className="ds-card-muted p-5">
               <p className="text-sm text-slate-400">{step}</p>
@@ -82,9 +94,12 @@ export default function DocsPage() {
       </section>
 
       <section className="ds-card-glow p-8 text-center">
-        <h2 className="ds-title">برای انتخاب محصول مناسب آماده اید؟</h2>
+        <h2 className="ds-title">
+          آماده‌اید محصولات اورجینال را با خیال راحت تهیه کنید؟
+        </h2>
         <p className="mt-3 text-sm text-slate-400">
-          تیم سورنانت برای راهنمایی دقیق و پیشنهاد بهترین گزینه در کنار شماست.
+          تیم سورنانت کنار شماست تا بهترین انتخاب را انجام دهید و بدون دغدغه
+          فنی، پروژه خود را اجرا کنید.
         </p>
         <Button
           as={Link}

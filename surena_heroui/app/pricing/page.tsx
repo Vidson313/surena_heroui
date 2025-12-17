@@ -5,52 +5,52 @@ import { siteConfig } from "@/config/site";
 
 const packages = [
   {
-    title: "شروع حرفه ای",
-    badge: "مناسب برندهای نوپا",
+    title: "استارت حرفه‌ای",
+    badge: "مناسب شروع همکاری",
     features: [
-      "طراحی سایت شرکتی یا شخصی",
-      "بهینه سازی سرعت پایه",
-      "پیکربندی امنیت اولیه",
+      "طراحی پایه با استانداردهای UX",
+      "راه‌اندازی محصول اورجینال موردنیاز",
+      "پایه‌سازی سئو و سرعت",
     ],
   },
   {
-    title: "رشد فروش",
-    badge: "فروشگاهی و نتیجه محور",
+    title: "رشد تجاری",
+    badge: "پیشنهاد ویژه سورنانت",
     featured: true,
     features: [
-      "طراحی فروشگاهی کامل",
-      "بهینه سازی تجربه کاربری خرید",
-      "اتصال درگاه و حمل و نقل",
+      "طراحی اختصاصی UI/UX و توسعه کامل",
+      "سئو مرحله‌ای با گزارش شفاف",
+      "پشتیبانی VIP و مانیتورینگ امنیتی",
     ],
   },
   {
-    title: "رشد پایدار",
-    badge: "برای برندهای مقیاس پذیر",
+    title: "پلتفرم سازمانی",
+    badge: "برای برندهای بزرگ",
     features: [
-      "استراتژی سئو مرحله ای",
-      "داشبورد گزارش های پیشرفت",
-      "پشتیبانی اختصاصی رشد",
+      "معماری مقیاس‌پذیر و توسعه اختصاصی",
+      "یکپارچه‌سازی سیستم‌های فروش و CRM",
+      "تیم پشتیبانی اختصاصی و SLA",
     ],
   },
 ];
 
 const notes = [
-  "قیمت نهایی پس از نیازسنجی شفاف اعلام می شود.",
-  "گارانتی کیفیت و بازگشت وجه برای محصولات سورنانت فعال است.",
-  "تمام پروژه ها با مستندات و آموزش تحویل داده می شوند.",
+  "تمام پلن‌ها شامل مشاوره تخصصی و نقشه راه رشد هستند.",
+  "قیمت‌گذاری بر اساس نیاز واقعی پروژه و حجم کار تعیین می‌شود.",
+  "گارانتی بازگشت وجه برای پروژه‌های طراحی و سئو فعال است.",
 ];
 
 export default function PricingPage() {
   return (
     <>
       <section className="ds-card-glow p-8 text-center">
-        <span className="ds-chip">تعرفه و بسته های همکاری</span>
+        <span className="ds-chip">پلن‌های همکاری سورنانت</span>
         <h1 className="ds-title mt-4">
-          قیمت گذاری شفاف برای رشد دیجیتال قابل اعتماد
+          انتخاب هوشمندانه برای رشد آنلاین مطمئن و قابل اعتماد
         </h1>
         <p className="ds-subtitle mt-4">
-          سورنانت بر اساس نیاز واقعی شما پیشنهاد می دهد. بسته های زیر نمای کلی
-          از مسیرهای همکاری هستند.
+          با توجه به سطح پروژه و اهداف شما، پلن مناسب پیشنهاد می‌شود. هر پلن
+          با استانداردهای Sorena Nexus و تعهد به کیفیت واقعی ارائه می‌شود.
         </p>
       </section>
 
@@ -77,11 +77,7 @@ export default function PricingPage() {
 
           return (
             <div key={pkg.title}>
-              {pkg.featured ? (
-                <div className="ds-border-animated">{card}</div>
-              ) : (
-                card
-              )}
+              {pkg.featured ? <div className="ds-border-animated">{card}</div> : card}
             </div>
           );
         })}
@@ -89,7 +85,9 @@ export default function PricingPage() {
 
       <section className="ds-card-muted p-7">
         <p className="ds-eyebrow">نکات مهم</p>
-        <h2 className="ds-title mt-3">چطور قیمت گذاری می کنیم؟</h2>
+        <h2 className="ds-title mt-3">
+          قبل از انتخاب پلن، این موارد را در نظر بگیرید
+        </h2>
         <div className="mt-6 grid gap-3 md:grid-cols-2">
           {notes.map((note) => (
             <div key={note} className="ds-card p-5">
@@ -100,10 +98,9 @@ export default function PricingPage() {
       </section>
 
       <section className="ds-card-glow p-8 text-center">
-        <h2 className="ds-title">برای دریافت پیشنهاد دقیق آماده اید؟</h2>
+        <h2 className="ds-title">برای انتخاب بهترین پلن آماده‌اید؟</h2>
         <p className="mt-3 text-sm text-slate-400">
-          کافیست نیاز خود را با ما مطرح کنید تا مسیر شفاف و بودجه مناسب را ارائه
-          دهیم.
+          با مشاوره تخصصی سورنانت، دقیق‌ترین مسیر رشد برای کسب‌وکار شما مشخص می‌شود.
         </p>
         <Button
           as={Link}
@@ -113,7 +110,7 @@ export default function PricingPage() {
           size="lg"
           variant="flat"
         >
-          شروع مشاوره
+          شروع همکاری
         </Button>
       </section>
     </>

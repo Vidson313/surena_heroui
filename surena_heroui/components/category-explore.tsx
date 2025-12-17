@@ -3,34 +3,34 @@ import NextLink from "next/link";
 
 const categories = [
   {
-    name: "قالب های حرفه ای",
-    desc: "مجموعه ای از برترین پوسته های اورجینال",
+    name: "قالب‌های حرفه‌ای",
+    desc: "مجموعه‌ای از پوسته‌های اورجینال با نصب آسان و لایسنس معتبر.",
     icon: Layout,
-    href: "/docs",
+    href: "/products?category=themes",
     color: "from-blue-500 to-cyan-400",
     shadow: "shadow-blue-500/20",
   },
   {
-    name: "افزونه های کاربردی",
-    desc: "ابزارهای قدرتمند برای ارتقای سایت",
+    name: "افزونه‌های کاربردی",
+    desc: "ابزارهای قدرتمند برای سرعت، امنیت و رشد فروش آنلاین.",
     icon: Puzzle,
-    href: "/docs",
+    href: "/products?category=plugins",
     color: "from-indigo-500 to-purple-500",
     shadow: "shadow-indigo-500/20",
   },
   {
-    name: "امنیت و سرعت",
-    desc: "بهینه سازی تخصصی و ضد هک",
+    name: "امنیت و پشتیبانی",
+    desc: "خدمات مانیتورینگ، نگهداری و بهینه‌سازی مستمر.",
     icon: ShieldCheck,
-    href: "/#services",
+    href: "/services",
     color: "from-emerald-500 to-teal-400",
     shadow: "shadow-emerald-500/20",
   },
   {
-    name: "سرویس های آنی",
-    desc: "تحویل فوری لایسنس و خدمات",
+    name: "سرویس‌های فوری",
+    desc: "تحویل سریع لایسنس‌ها و مشاوره تخصصی برای شروع.",
     icon: Zap,
-    href: "/#contact",
+    href: "/contact",
     color: "from-amber-500 to-orange-400",
     shadow: "shadow-amber-500/20",
   },
@@ -43,7 +43,7 @@ export default function CategoryExplore() {
         <div className="mb-16 text-center">
           <h2 className="text-3xl font-bold text-white">
             دسترسی سریع به{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+            <span className="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
               دنیای محصولات
             </span>
           </h2>
@@ -85,7 +85,7 @@ export default function CategoryExplore() {
                 </p>
 
                 <div className="flex items-center gap-2 text-xs font-bold text-blue-400 transition-all group-hover:gap-4">
-                  <span>مشاهده محصولات</span>
+                  <span>مشاهده جزئیات</span>
                   <ArrowLeft size={16} />
                 </div>
               </NextLink>
