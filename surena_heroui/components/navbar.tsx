@@ -2,22 +2,22 @@
 
 import {
   Navbar as HeroUINavbar,
-  NavbarContent,
-  NavbarMenu,
-  NavbarMenuToggle,
   NavbarBrand,
+  NavbarContent,
   NavbarItem,
+  NavbarMenu,
   NavbarMenuItem,
+  NavbarMenuToggle,
 } from "@heroui/navbar";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 import { link as linkStyles } from "@heroui/theme";
+import Image from "next/image";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
-import { Logo } from "@/components/icons";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -29,22 +29,19 @@ export const Navbar = () => {
       position="sticky"
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-2 max-w-fit">
+        <NavbarBrand as="li" className="max-w-fit gap-2">
           <NextLink className="flex items-center gap-2" href="/">
-            <span className="text-[color:var(--ds-accent)]">
-              <Logo />
-            </span>
-            <div className="flex flex-col leading-tight">
-              <span className="text-base font-semibold text-white">
-                سورنانت
-              </span>
-              <span className="text-xs text-[color:var(--ds-muted)]">
-                رشد آنلاین شفاف، امن و قابل اعتماد
-              </span>
-            </div>
+            <Image
+              src="/logo-combo-horizontal-fa.svg"
+              alt="لوگوی سورنا نت"
+              width={160}
+              height={44}
+              priority
+              className="h-10 w-auto"
+            />
           </NextLink>
         </NavbarBrand>
-        <ul className="hidden lg:flex items-center gap-6">
+        <ul className="hidden items-center gap-6 lg:flex">
           {siteConfig.navItems.map((item) => {
             const isActive =
               item.href === "/"
@@ -71,7 +68,7 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
+        className="hidden basis-1/5 sm:basis-full sm:flex"
         justify="end"
       >
         <NavbarItem>

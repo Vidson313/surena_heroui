@@ -236,6 +236,20 @@
     border: 1px solid transparent;
     box-shadow: 0 18px 48px rgba(59, 130, 246, 0.22);
   }
+
+  .ds-logo-stacked {
+    width: 140px;
+    height: 90px;
+    background-color: #457bf1;
+    mask-image: url("/logo-combo-stacked-fa.svg");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    -webkit-mask-image: url("/logo-combo-stacked-fa.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center;
+  }
 }
 
 @layer utilities {
