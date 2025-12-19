@@ -61,15 +61,17 @@ const categoryLabels: Record<string, string> = {
   licenses: "لایسنس‌ها",
 };
 
-export default function ProductsPage({
+export default async function ProductsPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
+  const sp = await searchParams;
+
   const query =
-    typeof searchParams.search === "string" ? searchParams.search.trim() : "";
+    typeof sp.search === "string" ? sp.search.trim() : "";
   const category =
-    typeof searchParams.category === "string" ? searchParams.category : "";
+    typeof sp.category === "string" ? sp.category : "";
 
   const filtered = products.filter((product) => {
     const matchesQuery = query
