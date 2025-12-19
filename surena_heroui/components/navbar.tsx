@@ -2,10 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
 import {
-  Box,
   ChevronDown,
   Code,
   Laptop,
@@ -17,6 +15,8 @@ import {
   Zap,
 } from "lucide-react";
 import clsx from "clsx";
+
+import { LogoMark } from "@/components/logo";
 
 const megaMenuContent = {
   products: [
@@ -113,24 +113,9 @@ export const Navbar = () => {
         <Link
           href="/"
           className="group flex items-center gap-2"
-          aria-label="صفحه اصلی سورنا نت"
+          aria-label="O?U?O-U? OO?U,UO O3U^O?U+O U+O?"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 shadow-lg shadow-blue-500/20">
-            <Image
-              src="/Primary%20Logomark%20(Transparent)%20(1).svg"
-              alt="لوگوی سورنا نت"
-              width={32}
-              height={32}
-              className="h-8 w-8 filter invert brightness-200"
-              priority
-            />
-          </div>
-          <div
-            className="hidden h-11 w-[170px] sm:block"
-            aria-label="لوگوی فارسی سورنا نت"
-          >
-            <div className="ds-logo-wordmark h-full w-full" />
-          </div>
+          <LogoMark size={40} />
         </Link>
 
         <ul className="hidden items-center gap-1 lg:flex" role="menubar">
