@@ -13,10 +13,13 @@ import {
   Sparkles,
   X,
   Zap,
+  ShoppingCart,
 } from "lucide-react";
 import clsx from "clsx";
 
 import { LogoMark } from "@/components/logo";
+import { useCart } from "@/lib/cart-context";
+import CartDrawer from "@/components/cart-drawer";
 
 const megaMenuContent = {
   products: [
@@ -60,12 +63,16 @@ const megaMenuContent = {
   ],
 };
 
-export const Navbar = () => {
-  const [activeMenu, setActiveMenu] = useState<"products" | "services" | null>(
-    null,
-  );
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const pathname = usePathname();
+  export const Navbar = () => {
+    const [activeMenu, setActiveMenu] = useState<"products" | "services" | null>(
+      null,
+    );
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const [cartOpen, setCartOpen] = useState(false);
+    
+    const { cart } = useCart();
+    const pathname = usePathname();
+
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -169,12 +176,25 @@ export const Navbar = () => {
         </ul>
 
           <div className="flex items-center gap-3">
+            <button
+              className="relative p-2 text-slate-400 transition-colors hover:text-white"
+              onClick={() => setCartOpen(true)}
+              aria-label="سبد خرید"
+            >
+              <ShoppingCart size={22} />
+              {cart.length > 0 && (
+                <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-[10px] font-bold text-white shadow-lg ring-2 ring-slate-900">
+                  {cart.length}
+                </span>
+              )}
+            </button>
             <Link
               href="/login"
               className="hidden text-sm font-bold text-slate-400 transition-colors hover:text-white md:block"
             >
               ورود
             </Link>
+
             <Link
               href="/contact"
               className="hidden text-sm font-bold text-slate-400 transition-colors hover:text-white md:block"
@@ -279,7 +299,10 @@ export const Navbar = () => {
             ))}
           </ul>
         </div>
-      ) : null}
-    </header>
-  );
-};
+        ) : null}
+
+        <CartDrawer isOpen={cartOpen} onClose={() => setCartOpen(false)} />
+      </header>
+    );
+  };
+

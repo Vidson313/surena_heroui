@@ -2,24 +2,8 @@ import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 
 import { siteConfig } from "@/config/site";
-
-const services = [
-  {
-    title: "طراحی وب‌سایت حرفه‌ای",
-    desc: "طراحی مدرن، معماری اصولی و تجربه کاربری هدفمند برای افزایش اعتماد.",
-    items: ["UI/UX اختصاصی", "سرعت و امنیت بالا", "معماری مقیاس‌پذیر"],
-  },
-  {
-    title: "سئو و رشد ارگانیک",
-    desc: "استراتژی مرحله‌به‌مرحله برای رسیدن به ورودی پایدار و درآمدزا.",
-    items: ["تحلیل رقبا", "استراتژی محتوا", "گزارش‌های شفاف"],
-  },
-  {
-    title: "پشتیبانی و نگهداری",
-    desc: "مانیتورینگ، آپدیت و بکاپ‌گیری منظم برای آرامش خاطر.",
-    items: ["پشتیبانی VIP", "به‌روزرسانی منظم", "رفع مشکلات فوری"],
-  },
-];
+import { createClient } from "@/lib/supabase-server";
+import ProjectRequestForm from "@/components/project-request-form";
 
 const workflow = [
   "تحلیل نیاز و تعیین اهداف کسب‌وکار",
@@ -28,7 +12,17 @@ const workflow = [
   "انتشار، سئو و پایش نتایج",
 ];
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const supabase = await createClient();
+  const { data: services, error } = await supabase
+    .from("services")
+    .select("*")
+    .order("created_at", { ascending: true });
+
+  if (error) {
+    console.error("Error fetching services:", error);
+  }
+
   return (
     <div className="flex flex-col gap-16 pb-24">
       <section className="ds-card-glow p-8 text-center">
@@ -43,20 +37,15 @@ export default function ServicesPage() {
       </section>
 
       <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service) => (
-          <div key={service.title} className="ds-card p-6">
+        {services?.map((service) => (
+          <div key={service.id} className="ds-card p-6">
             <h2 className="text-lg font-semibold text-white">
               {service.title}
             </h2>
-            <p className="mt-2 text-sm text-slate-400">{service.desc}</p>
-            <ul className="mt-4 space-y-2 text-sm text-slate-300">
-              {service.items.map((item) => (
-                <li key={item} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <p className="mt-2 text-sm text-slate-400">{service.description}</p>
+            <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-blue-400">
+              مشاهده جزئیات سرویس
+            </div>
           </div>
         ))}
       </section>
@@ -75,20 +64,14 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="ds-card-glow p-8 text-center">
-        <h2 className="ds-title">برای شروع همکاری آماده‌اید؟</h2>
-        <p className="mt-3 text-sm text-slate-400">
-          با مشاوره تخصصی سورنانت، بهترین مسیر رشد را برای برند خود انتخاب کنید.
-        </p>
-        <Button
-          as={Link}
-          className="ds-btn ds-btn-primary mt-6"
-          href={siteConfig.links.primaryCta}
-          radius="lg"
-          variant="flat"
-        >
-          دریافت مشاوره
-        </Button>
+      <section id="request-form" className="flex flex-col gap-8">
+        <div className="text-center">
+          <h2 className="ds-title">ثبت درخواست پروژه</h2>
+          <p className="mt-3 text-sm text-slate-400">
+            برای دریافت برآورد زمان و هزینه، فرم زیر را تکمیل کنید تا کارشناسان ما با شما تماس بگیرند.
+          </p>
+        </div>
+        <ProjectRequestForm />
       </section>
     </div>
   );

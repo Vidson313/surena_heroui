@@ -35,16 +35,20 @@ export default async function BlogPage() {
       <section className="grid gap-4 md:grid-cols-2">
         {topics.length > 0 ? (
           topics.map((topic) => (
-            <div key={topic.id} className="ds-card p-6">
-              <span className="ds-chip">{topic.author}</span>
-              <h2 className="mt-4 text-lg font-semibold text-white">
-                {topic.title}
-              </h2>
-              <p className="mt-2 text-sm text-slate-400">{topic.excerpt}</p>
-              <span className="mt-4 inline-flex text-sm font-semibold text-blue-400">
-                ادامه مطلب
-              </span>
-            </div>
+              <div key={topic.id} className="ds-card p-6">
+                <span className="ds-chip">{topic.author}</span>
+                <h2 className="mt-4 text-lg font-semibold text-white">
+                  {topic.title}
+                </h2>
+                <p className="mt-2 text-sm text-slate-400">{topic.excerpt}</p>
+                <Link
+                  className="mt-4 inline-flex text-sm font-semibold text-blue-400"
+                  href={`/blog/${topic.slug}`}
+                >
+                  ادامه مطلب
+                </Link>
+              </div>
+
           ))
         ) : (
           <div className="ds-card col-span-full p-10 text-center">
