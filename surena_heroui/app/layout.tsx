@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import { Suspense } from "react";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 
@@ -43,7 +44,9 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex min-h-screen flex-col">
-            <Navbar />
+            <Suspense fallback={null}>
+              <Navbar />
+            </Suspense>
             <main className="ds-container flex-grow pt-20">{children}</main>
             <Footer />
           </div>
