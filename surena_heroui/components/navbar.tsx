@@ -168,13 +168,19 @@ export const Navbar = () => {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
-          <Link
-            href="/contact"
-            className="hidden text-sm font-bold text-slate-400 transition-colors hover:text-white md:block"
-          >
-            تماس
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/login"
+              className="hidden text-sm font-bold text-slate-400 transition-colors hover:text-white md:block"
+            >
+              ورود
+            </Link>
+            <Link
+              href="/contact"
+              className="hidden text-sm font-bold text-slate-400 transition-colors hover:text-white md:block"
+            >
+              تماس
+            </Link>
           <Link
             href="/contact"
             className="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-black text-white shadow-xl shadow-blue-500/20 transition-all hover:bg-blue-500 active:scale-95"

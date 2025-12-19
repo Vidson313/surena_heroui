@@ -1,39 +1,26 @@
-const topics = [
-  {
-    title: "چطور یک سایت فروشگاهی سریع و امن بسازیم؟",
-    category: "تجربه کاربری",
-    summary:
-      "معماری درست، انتخاب افزونه‌های معتبر و بهینه‌سازی سرعت؛ سه ستون یک فروشگاه موفق.",
-  },
-  {
-    title: "نقشه راه سئو برای کسب‌وکارهای ایرانی",
-    category: "سئو",
-    summary:
-      "از تحلیل رقبا تا استراتژی محتوا و لینک‌سازی اصولی، مسیر رشد پایدار را بشناسید.",
-  },
-  {
-    title: "راهنمای انتخاب افزونه‌های اورجینال وردپرس",
-    category: "محصولات",
-    summary:
-      "چطور افزونه امن، به‌روز و بومی‌سازی‌شده بخریم و از باگ‌های رایج دور بمانیم.",
-  },
-  {
-    title: "چرا طراحی UX در اعتماد کاربر نقش کلیدی دارد؟",
-    category: "طراحی",
-    summary:
-      "جزئیات تجربه کاربری می‌تواند تبدیل را چند برابر کند؛ از مسیر کاربر تا حس اعتماد.",
-  },
-];
+import { createClient } from "@/lib/supabase-server";
 
-const resources = [
-  "چک‌لیست امنیت وردپرس برای وب‌سایت‌های فروشگاهی",
-  "راهنمای بهبود Core Web Vitals و سرعت صفحات",
-  "الگوهای صفحه محصول برای افزایش نرخ تبدیل",
-];
+export default async function BlogPage() {
+  const supabase = await createClient();
+  const { data: posts, error } = await supabase
+    .from("blog_posts")
+    .select("*")
+    .order("published_at", { ascending: false });
 
-export default function BlogPage() {
+  if (error) {
+    console.error("Error fetching blog posts:", error);
+  }
+
+  const topics = posts || [];
+
+  const resources = [
+    "چک‌لیست امنیت وردپرس برای وب‌سایت‌های فروشگاهی",
+    "راهنمای بهبود Core Web Vitals و سرعت صفحات",
+    "الگوهای صفحه محصول برای افزایش نرخ تبدیل",
+  ];
+
   return (
-    <>
+    <div className="flex flex-col gap-16 pb-24">
       <section className="ds-card-glow p-8">
         <span className="ds-chip">یادداشت‌های سورنانت</span>
         <h1 className="ds-title mt-4">
@@ -46,18 +33,24 @@ export default function BlogPage() {
       </section>
 
       <section className="grid gap-4 md:grid-cols-2">
-        {topics.map((topic) => (
-          <div key={topic.title} className="ds-card p-6">
-            <span className="ds-chip">{topic.category}</span>
-            <h2 className="mt-4 text-lg font-semibold text-white">
-              {topic.title}
-            </h2>
-            <p className="mt-2 text-sm text-slate-400">{topic.summary}</p>
-            <span className="mt-4 inline-flex text-sm font-semibold text-blue-400">
-              ادامه مطلب
-            </span>
+        {topics.length > 0 ? (
+          topics.map((topic) => (
+            <div key={topic.id} className="ds-card p-6">
+              <span className="ds-chip">{topic.author}</span>
+              <h2 className="mt-4 text-lg font-semibold text-white">
+                {topic.title}
+              </h2>
+              <p className="mt-2 text-sm text-slate-400">{topic.excerpt}</p>
+              <span className="mt-4 inline-flex text-sm font-semibold text-blue-400">
+                ادامه مطلب
+              </span>
+            </div>
+          ))
+        ) : (
+          <div className="ds-card col-span-full p-10 text-center">
+            <p className="text-sm text-slate-400">هنوز مطلبی منتشر نشده است.</p>
           </div>
-        ))}
+        )}
       </section>
 
       <section className="ds-card p-7">
@@ -99,6 +92,6 @@ export default function BlogPage() {
           ))}
         </ul>
       </section>
-    </>
+    </div>
   );
 }

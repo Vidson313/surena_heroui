@@ -1,4 +1,9 @@
+'use client';
+
+import { useState } from 'react';
 import { Button } from "@heroui/button";
+import { sendContactMessage } from "@/app/actions/contact";
+import { addToast } from "@heroui/toast";
 
 const contactCards = [
   {
@@ -19,6 +24,32 @@ const contactCards = [
 ];
 
 export default function ContactPage() {
+  const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      setLoading(true);
+
+      try {
+        const formData = new FormData(e.currentTarget);
+        await sendContactMessage(formData);
+        addToast({
+          title: "پیام ارسال شد",
+          description: "پیام شما با موفقیت ارسال شد. به زودی با شما تماس می‌گیریم.",
+          color: "success",
+        });
+        (e.target as HTMLFormElement).reset();
+      } catch (error: any) {
+        addToast({
+          title: "خطا",
+          description: error.message || "خطا در ارسال پیام.",
+          color: "danger",
+        });
+      } finally {
+        setLoading(false);
+      }
+    };
+
   return (
     <div className="flex flex-col gap-16 pb-24">
       <section className="ds-card-glow p-8 text-center">
@@ -47,28 +78,39 @@ export default function ContactPage() {
       <section className="ds-card p-8">
         <p className="ds-eyebrow">فرم تماس</p>
         <h2 className="ds-title mt-3">جزئیات پروژه خود را با ما به اشتراک بگذارید</h2>
-        <form className="mt-6 grid gap-4 md:grid-cols-2">
+        <form onSubmit={handleSubmit} className="mt-6 grid gap-4 md:grid-cols-2">
           <input
+            name="fullName"
+            required
             className="rounded-2xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/40"
             placeholder="نام و نام خانوادگی"
             type="text"
           />
           <input
+            name="phone"
             className="rounded-2xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/40"
             placeholder="شماره تماس"
             type="tel"
           />
           <input
+            name="email"
+            required
             className="rounded-2xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/40 md:col-span-2"
             placeholder="ایمیل"
             type="email"
           />
           <textarea
+            name="message"
+            required
             className="min-h-[140px] rounded-2xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/40 md:col-span-2"
             placeholder="توضیح کوتاه درباره نیاز یا پروژه"
           />
           <div className="md:col-span-2">
-            <Button className="ds-btn ds-btn-primary w-full" type="button">
+            <Button 
+              className="ds-btn ds-btn-primary w-full" 
+              type="submit"
+              isLoading={loading}
+            >
               ارسال درخواست
             </Button>
           </div>

@@ -1,59 +1,8 @@
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
-
 import HeroSearch from "@/components/hero-search";
 import { siteConfig } from "@/config/site";
-
-const products = [
-  {
-    id: 1,
-    title: "قالب فروشگاهی نکسوس",
-    category: "themes",
-    type: "قالب",
-    price: "۸۵۰٬۰۰۰ تومان",
-    desc: "مناسب فروشگاه‌های حرفه‌ای با طراحی مینیمال و سرعت بالا.",
-  },
-  {
-    id: 2,
-    title: "افزونه امنیت پرو",
-    category: "plugins",
-    type: "افزونه",
-    price: "۴۲۰٬۰۰۰ تومان",
-    desc: "محافظت کامل در برابر بدافزارها و حملات رایج وردپرس.",
-  },
-  {
-    id: 3,
-    title: "قالب شرکتی آروان",
-    category: "themes",
-    type: "قالب",
-    price: "۶۵۰٬۰۰۰ تومان",
-    desc: "مخصوص برندهای خدماتی با تمرکز بر اعتماد و اعتبار.",
-  },
-  {
-    id: 4,
-    title: "افزونه سئو پیشرفته",
-    category: "plugins",
-    type: "افزونه",
-    price: "۳۸۰٬۰۰۰ تومان",
-    desc: "تنظیمات حرفه‌ای سئو، اسکیما و تحلیل محتوا.",
-  },
-  {
-    id: 5,
-    title: "لایسنس المنتور پرو",
-    category: "licenses",
-    type: "لایسنس",
-    price: "۵۱۰٬۰۰۰ تومان",
-    desc: "نسخه اورجینال با فعال‌سازی معتبر و آپدیت منظم.",
-  },
-  {
-    id: 6,
-    title: "قالب کلینیکی هرمس",
-    category: "themes",
-    type: "قالب",
-    price: "۵۹۰٬۰۰۰ تومان",
-    desc: "تمرکز بر رزرو آنلاین و تجربه کاربری ساده.",
-  },
-];
+import { createClient } from "@/lib/supabase-server";
 
 const categoryLabels: Record<string, string> = {
   themes: "قالب‌ها",
@@ -67,19 +16,29 @@ export default async function ProductsPage({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const sp = await searchParams;
+  const supabase = await createClient();
 
-  const query =
-    typeof sp.search === "string" ? sp.search.trim() : "";
-  const category =
-    typeof sp.category === "string" ? sp.category : "";
+  const query = typeof sp.search === "string" ? sp.search.trim() : "";
+  const category = typeof sp.category === "string" ? sp.category : "";
 
-  const filtered = products.filter((product) => {
+  let dbQuery = supabase.from("products").select("*");
+
+  if (category) {
+    dbQuery = dbQuery.eq("category", category);
+  }
+
+  const { data: products, error } = await dbQuery;
+
+  if (error) {
+    console.error("Error fetching products:", error);
+  }
+
+  const filtered = products?.filter((product) => {
     const matchesQuery = query
-      ? product.title.includes(query) || product.desc.includes(query)
+      ? product.name.includes(query) || (product.description && product.description.includes(query))
       : true;
-    const matchesCategory = category ? product.category === category : true;
-    return matchesQuery && matchesCategory;
-  });
+    return matchesQuery;
+  }) || [];
 
   return (
     <div className="flex flex-col gap-16 pb-24">
@@ -118,13 +77,15 @@ export default async function ProductsPage({
           filtered.map((product) => (
             <div key={product.id} className="ds-card p-6">
               <div className="flex items-center justify-between">
-                <span className="ds-chip">{product.type}</span>
-                <span className="text-xs text-slate-500">{product.price}</span>
+                <span className="ds-chip">{categoryLabels[product.category] || product.category}</span>
+                <span className="text-xs text-slate-500">
+                  {product.price ? `${new Intl.NumberFormat('fa-IR').format(product.price)} تومان` : "تماس بگیرید"}
+                </span>
               </div>
               <h3 className="mt-4 text-lg font-semibold text-white">
-                {product.title}
+                {product.name}
               </h3>
-              <p className="mt-2 text-sm text-slate-400">{product.desc}</p>
+              <p className="mt-2 text-sm text-slate-400">{product.description}</p>
               <Link
                 className="mt-4 inline-flex text-sm font-semibold text-blue-400"
                 href={siteConfig.links.primaryCta}
