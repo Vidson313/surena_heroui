@@ -250,6 +250,22 @@
     -webkit-mask-size: contain;
     -webkit-mask-position: center;
   }
+
+  .ds-logo-wordmark {
+    width: 170px;
+    height: 44px;
+    background: linear-gradient(135deg, #2563eb, #4338ca);
+    mask-image: url("/Logotype_persian_Transparent%20(1).svg");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    -webkit-mask-image: url("/Logotype_persian_Transparent%20(1).svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center;
+    transform: scale(1.12);
+    transform-origin: left center;
+  }
 }
 
 @layer utilities {
