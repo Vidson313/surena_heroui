@@ -1,7 +1,5 @@
 "use client";
 
-import { CheckboxGroup, Checkbox } from "@heroui/checkbox";
-import { Slider } from "@heroui/slider";
 import { Input } from "@heroui/input";
 import { Search } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -21,6 +19,8 @@ export default function ProductSidebar() {
 
   const [search, setSearch] = useState(searchParams.get("search") || "");
   const [category, setCategory] = useState(searchParams.get("category") || "");
+  const [minPrice, setMinPrice] = useState(searchParams.get("minPrice") || "");
+  const [maxPrice, setMaxPrice] = useState(searchParams.get("maxPrice") || "");
 
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
@@ -30,8 +30,14 @@ export default function ProductSidebar() {
     if (category) params.set("category", category);
     else params.delete("category");
 
+    if (minPrice) params.set("minPrice", minPrice);
+    else params.delete("minPrice");
+
+    if (maxPrice) params.set("maxPrice", maxPrice);
+    else params.delete("maxPrice");
+
     router.replace(`${pathname}?${params.toString()}`);
-  }, [search, category]);
+  }, [search, category, minPrice, maxPrice]);
 
   return (
     <div className="flex flex-col gap-8">
@@ -70,17 +76,24 @@ export default function ProductSidebar() {
       </div>
 
       <div className="ds-card p-5">
-        <h3 className="text-sm font-semibold text-white">محدوده قیمت</h3>
-        <Slider
-          className="mt-6"
-          formatOptions={{ style: "currency", currency: "IRR" }}
-          maxValue={2000000}
-          minValue={0}
-          size="sm"
-          step={50000}
-          defaultValue={[0, 2000000]}
-          label="قیمت (تومان)"
-        />
+        <h3 className="text-sm font-semibold text-white mb-4">محدوده قیمت</h3>
+        <div className="flex gap-2 items-center">
+          <Input
+            placeholder="از"
+            size="sm"
+            type="number"
+            value={minPrice}
+            onValueChange={setMinPrice}
+          />
+          <span className="text-slate-500">-</span>
+          <Input
+            placeholder="تا"
+            size="sm"
+            type="number"
+            value={maxPrice}
+            onValueChange={setMaxPrice}
+          />
+        </div>
       </div>
     </div>
   );
