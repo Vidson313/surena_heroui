@@ -3,39 +3,170 @@
 @config "../tailwind.config.js";
 
 @layer base {
-  :root {
-    --ds-bg: #020617;
-    --ds-surface: #0f172a;
-    --ds-surface-muted: #111827;
-    --ds-surface-strong: #1e293b;
-    --ds-ink: #f8fafc;
-    --ds-ink-soft: #e2e8f0;
-    --ds-muted: #94a3b8;
-    --ds-muted-2: #64748b;
-    --ds-border: #1e293b;
-    --ds-accent: #3b82f6;
-    --ds-accent-strong: #6366f1;
-    --ds-accent-cool: #38bdf8;
-    --ds-accent-warm: #f59e0b;
-    --ds-gradient-primary: linear-gradient(110deg, #3b82f6 0%, #6366f1 100%);
-    --ds-gradient-hero: radial-gradient(
-        900px circle at 18% 12%,
-        rgba(59, 130, 246, 0.28),
-        transparent 55%
-      ),
-      radial-gradient(
-        800px circle at 86% 6%,
-        rgba(99, 102, 241, 0.26),
-        transparent 50%
-      ),
-      linear-gradient(135deg, #020617 0%, #0b1120 48%, #0f172a 100%);
-    --ds-shadow-soft: 0 14px 40px rgba(2, 6, 23, 0.6);
-    --ds-shadow-card: 0 18px 44px rgba(2, 6, 23, 0.55);
-    --ds-shadow-glow: 0 0 0 1px rgba(59, 130, 246, 0.15),
-      0 30px 90px rgba(37, 99, 235, 0.25);
-    --ds-radius-lg: 26px;
-    --ds-radius-md: 18px;
+    :root {
+      --ds-bg: #000000;
+      --ds-surface: #0a0a0a;
+      --ds-surface-muted: #111111;
+      --ds-surface-strong: #161616;
+      --ds-ink: #ffffff;
+      --ds-ink-soft: #f2f2f2;
+      --ds-muted: #888888;
+      --ds-muted-2: #666666;
+      --ds-border: #222222;
+      --ds-accent: #3b82f6;
+      --ds-accent-strong: #6366f1;
+      --ds-accent-cool: #60a5fa;
+      --ds-accent-warm: #f59e0b;
+      --ds-gradient-primary: linear-gradient(110deg, #ffffff 0%, #3b82f6 100%);
+      --ds-gradient-hero: radial-gradient(
+          1000px circle at 18% 12%,
+          rgba(59, 130, 246, 0.15),
+          transparent 60%
+        ),
+        radial-gradient(
+          800px circle at 86% 6%,
+          rgba(99, 102, 241, 0.12),
+          transparent 50%
+        ),
+        #000000;
+      --ds-shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.8);
+      --ds-shadow-card: 0 18px 44px rgba(0, 0, 0, 0.7);
+      --ds-shadow-glow: 0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 30px 90px rgba(59, 130, 246, 0.15);
+      --ds-radius-lg: 0px;
+      --ds-radius-md: 0px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--ds-bg);
+      color: var(--ds-ink);
+      text-rendering: optimizeLegibility;
+      font-weight: 300;
+    }
+
+    ::selection {
+      background: #ffffff;
+      color: #000000;
+    }
   }
+
+  @layer components {
+    .ds-container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 80rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .ds-section {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+    @media (min-width: 768px) {
+      .ds-section {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+      }
+    }
+
+    .ds-card {
+      border-radius: var(--ds-radius-lg);
+      border: 1px solid var(--ds-border);
+      background: var(--ds-surface);
+      color: var(--ds-ink);
+      box-shadow: var(--ds-shadow-card);
+    }
+
+    .ds-card-muted {
+      border-radius: var(--ds-radius-md);
+      border: 1px solid var(--ds-border);
+      background: #050505;
+      color: var(--ds-ink);
+    }
+
+    .ds-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: 0;
+      border: 1px solid var(--ds-border);
+      background: #000;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--ds-ink);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .ds-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #888;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .ds-display {
+      font-size: clamp(3rem, 5vw + 1rem, 6rem);
+      font-weight: 900;
+      line-height: 1;
+      color: var(--ds-ink);
+      letter-spacing: -0.04em;
+    }
+
+    .ds-title {
+      font-size: clamp(2rem, 3vw + 1rem, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--ds-ink);
+      letter-spacing: -0.02em;
+    }
+
+    .ds-subtitle {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: #ccc;
+      font-weight: 300;
+      max-width: 600px;
+    }
+
+    .ds-btn {
+      border-radius: 0;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .ds-btn-primary {
+      background: #ffffff;
+      color: #000000;
+      border: 1px solid #ffffff;
+    }
+
+    .ds-btn-primary:hover {
+      background: transparent;
+      color: #ffffff;
+    }
+
+    .ds-btn-secondary {
+      border: 1px solid #333;
+      background: transparent;
+      color: #ffffff;
+    }
+
+    .ds-btn-secondary:hover {
+      border-color: #ffffff;
+    }
+
 
   html {
     scroll-behavior: smooth;
